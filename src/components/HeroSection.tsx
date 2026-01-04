@@ -19,7 +19,7 @@ const HeroSection = ({ onStartChat, onStartVoice }: HeroSectionProps) => {
         {/* Status Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30 mb-8 animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-          <span className="text-sm font-medium text-success">24/7 AI Healthcare Assistant</span>
+          <span className="text-sm font-medium text-success">Because Health Can't Wait</span>
         </div>
 
         {/* Main Heading */}
