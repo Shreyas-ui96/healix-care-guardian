@@ -63,12 +63,6 @@ const HeroSection = ({ onStartChat, onStartVoice }: HeroSectionProps) => {
         </div>
       </div>
 
-      {/* Floating Activity Icon */}
-      <div className="absolute bottom-10 left-10 hidden lg:block animate-float">
-        <div className="w-16 h-16 rounded-2xl bg-glass flex items-center justify-center shadow-card">
-          <Activity className="w-8 h-8 text-primary" />
-        </div>
-      </div>
     </section>
   );
 };
