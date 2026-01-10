@@ -1,4 +1,4 @@
-import { MessageCircle, Mic, Activity } from "lucide-react";
+import { MessageCircle, Mic } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps {
@@ -8,16 +8,10 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onStartChat, onStartVoice }: HeroSectionProps) => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center px-4 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-      </div>
-
+    <section className="relative min-h-[70vh] flex items-center justify-center px-4 overflow-hidden pt-8">
       <div className="relative z-10 text-center max-w-2xl mx-auto">
         {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30 mb-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30 mb-8 animate-fade-in mt-1">
           <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
           <span className="text-sm font-medium text-success">Because Health Can't Wait</span>
         </div>

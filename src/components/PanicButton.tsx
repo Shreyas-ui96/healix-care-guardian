@@ -1,13 +1,15 @@
-import { Phone } from "lucide-react";
+import { Phone, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 interface PanicButtonProps {
   onActivate?: () => void;
+  onEmergencyClick?: () => void;
 }
 
-const PanicButton = ({ onActivate }: PanicButtonProps) => {
+const PanicButton = ({ onActivate, onEmergencyClick }: PanicButtonProps) => {
   const [isActivated, setIsActivated] = useState(false);
 
   const handlePanic = () => {
@@ -17,6 +19,7 @@ const PanicButton = ({ onActivate }: PanicButtonProps) => {
       duration: 5000,
     });
     onActivate?.();
+    onEmergencyClick?.();
     
     setTimeout(() => setIsActivated(false), 3000);
   };
@@ -26,16 +29,20 @@ const PanicButton = ({ onActivate }: PanicButtonProps) => {
       variant="emergency"
       size="xl"
       onClick={handlePanic}
-      className={`
-        fixed bottom-6 right-6 z-50 rounded-full w-20 h-20 p-0
-        ${isActivated ? 'scale-110' : ''}
-        transition-all duration-300
-      `}
-      aria-label="Emergency Panic Button"
+      className={cn(
+        "fixed bottom-6 right-6 z-50 rounded-full w-20 h-20 p-0",
+        "transition-all duration-300 hover:shadow-2xl",
+        isActivated && "scale-110 brightness-125"
+      )}
+      aria-label="Emergency Panic Button - Call for immediate help"
     >
       <div className="flex flex-col items-center gap-1">
-        <Phone className="w-7 h-7" />
-        <span className="text-xs font-bold">SOS</span>
+        {isActivated ? (
+          <AlertCircle className="w-7 h-7 animate-spin" />
+        ) : (
+          <Phone className="w-7 h-7" />
+        )}
+        <span className="text-xs font-bold tracking-wider">SOS</span>
       </div>
     </Button>
   );

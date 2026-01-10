@@ -36,7 +36,7 @@ const TriageFlow = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-card">
+    <section className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
