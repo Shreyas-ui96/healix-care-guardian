@@ -62,7 +62,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSend = (content: string) => {
+  const handleSend = async (content: string) => {
     const userMessage: Message = {
       id: Date.now().toString(),
       content,
@@ -73,30 +73,50 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
     setMessages((prev) => [...prev, userMessage]);
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const lowerContent = content.toLowerCase();
-      let responseData = symptomResponses.default;
+    try {
+      // Call the backend API
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: content,
+          conversationHistory: messages.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }))
+        }),
+      });
 
-      for (const [keyword, data] of Object.entries(symptomResponses)) {
-        if (lowerContent.includes(keyword)) {
-          responseData = data;
-          break;
-        }
+      if (!response.ok) {
+        throw new Error('Failed to get response from server');
       }
 
-      setUrgencyLevel(responseData.urgency);
+      const data = await response.json();
+      
+      setUrgencyLevel(data.urgency);
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: responseData.response,
+        content: data.response,
         role: "assistant",
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
 
       setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "I apologize, but I'm having trouble connecting right now. Please try again in a moment. If you're experiencing a medical emergency, please call emergency services immediately.",
+        role: "assistant",
+        timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   return (
