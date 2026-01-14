@@ -187,52 +187,47 @@ const Index = () => {
         <ServicesSection />
         
         {/* Emergency Response Protocol */}
-        <section className="py-16 px-4">
+        <section className="py-12 sm:py-16 px-3 sm:px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
                 Emergency Response Protocol
               </h2>
-              <p className="text-muted-foreground">Follow these steps in case of an emergency</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Follow these steps in case of an emergency</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 {
                   step: "1",
                   title: "Assess the Situation",
                   description: "Check if the scene is safe and identify the emergency",
-                  icon: "⚠️",
                 },
                 {
                   step: "2",
                   title: "Call for Help",
                   description: "Dial emergency services immediately (911 in US)",
-                  icon: "📞",
                 },
                 {
                   step: "3",
                   title: "Provide Information",
                   description: "Share location, symptoms, and patient condition",
-                  icon: "📍",
                 },
                 {
                   step: "4",
                   title: "Follow Instructions",
                   description: "Listen to emergency dispatcher and provide first aid if trained",
-                  icon: "🛡️",
                 },
               ].map((item, index) => (
                 <div key={index} className="relative">
-                  <div className="bg-glass border border-border/50 rounded-lg p-6 h-full hover:border-primary/50 transition-all">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-primary-foreground shadow-glow flex-shrink-0">
+                  <div className="bg-glass border border-border/50 rounded-lg p-4 sm:p-6 h-full hover:border-primary/50 transition-all">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-sm sm:text-base text-primary-foreground shadow-glow flex-shrink-0">
                         {item.step}
                       </div>
-                      <div className="flex-1">
-                        <div className="text-2xl mb-2">{item.icon}</div>
-                        <h3 className="font-semibold mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">{item.title}</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -246,36 +241,36 @@ const Index = () => {
         </section>
 
         {/* Important Information */}
-        <section className="py-16 px-4">
+        <section className="py-12 sm:py-16 px-3 sm:px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
                 Emergency Services Information
               </h2>
-              <p className="text-muted-foreground">Always available when you need us most</p>
+              <p className="text-muted-foreground text-sm sm:text-base">Always available when you need us most</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-glass border border-border/50 rounded-lg p-6 hover:border-primary/50 transition-all">
-                <div className="text-4xl mb-4">⏰</div>
-                <h3 className="font-semibold text-xl mb-2">24/7 Availability</h3>
-                <p className="text-muted-foreground">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+              <div className="bg-glass border border-border/50 rounded-lg p-4 sm:p-6 hover:border-primary/50 transition-all">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">24/7</div>
+                <h3 className="font-semibold text-lg sm:text-xl mb-2">24/7 Availability</h3>
+                <p className="text-muted-foreground text-sm">
                   Our emergency services are available round the clock, every day of the year. No appointment needed.
                 </p>
               </div>
 
-              <div className="bg-glass border border-border/50 rounded-lg p-6 hover:border-primary/50 transition-all">
-                <div className="text-4xl mb-4">📡</div>
-                <h3 className="font-semibold text-xl mb-2">Real-Time Response</h3>
-                <p className="text-muted-foreground">
+              <div className="bg-glass border border-border/50 rounded-lg p-4 sm:p-6 hover:border-primary/50 transition-all">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">Real-Time</div>
+                <h3 className="font-semibold text-lg sm:text-xl mb-2">Real-Time Response</h3>
+                <p className="text-muted-foreground text-sm">
                   Connected to emergency dispatch centers for immediate response and ambulance coordination.
                 </p>
               </div>
 
-              <div className="bg-glass border border-border/50 rounded-lg p-6 hover:border-primary/50 transition-all">
-                <div className="text-4xl mb-4">📋</div>
-                <h3 className="font-semibold text-xl mb-2">Medical History Access</h3>
-                <p className="text-muted-foreground">
+              <div className="bg-glass border border-border/50 rounded-lg p-4 sm:p-6 hover:border-primary/50 transition-all sm:col-span-2 md:col-span-1">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">Secure</div>
+                <h3 className="font-semibold text-lg sm:text-xl mb-2">Medical History Access</h3>
+                <p className="text-muted-foreground text-sm">
                   Emergency responders can access your medical records for informed treatment decisions.
                 </p>
               </div>
@@ -284,10 +279,10 @@ const Index = () => {
         </section>
         
         {/* Footer */}
-        <footer className="py-12 px-4 border-t border-border">
+        <footer className="py-8 sm:py-12 px-3 sm:px-4 border-t border-border">
           <div className="container mx-auto max-w-6xl text-center">
-            <p className="text-muted-foreground text-sm">
-              © 2024 Healix. Your health, always accessible. For emergencies, always dial local emergency services.
+            <p className="text-muted-foreground text-xs sm:text-sm">
+              2024 Healix. Your health, always accessible. For emergencies, always dial local emergency services.
             </p>
           </div>
         </footer>

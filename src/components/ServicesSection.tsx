@@ -10,18 +10,18 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-12 sm:py-16 px-3 sm:px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4">
             Healthcare Services
           </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
+          <p className="text-muted-foreground max-w-lg mx-auto text-sm sm:text-base px-4">
             Choose from our range of healthcare services tailored to your needs
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <ServiceCard
             icon={Video}
             title="Video Consultation"

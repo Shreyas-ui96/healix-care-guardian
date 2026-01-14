@@ -25,29 +25,6 @@ const initialMessages: Message[] = [
   },
 ];
 
-const symptomResponses: Record<string, { response: string; urgency: "normal" | "urgent" | "critical" }> = {
-  headache: {
-    response: "I understand you're experiencing a headache. Let me ask a few questions: How long have you had this headache? Is it accompanied by any other symptoms like nausea, sensitivity to light, or fever?",
-    urgency: "normal",
-  },
-  chest: {
-    response: "⚠️ Chest pain can be serious. Are you experiencing any of these symptoms: difficulty breathing, pain radiating to arm/jaw, sweating, or dizziness? If yes, please use the SOS button immediately.",
-    urgency: "urgent",
-  },
-  breathing: {
-    response: "🚨 Difficulty breathing requires immediate attention. If you're struggling to breathe, I'm activating emergency protocols. An ambulance has been dispatched to your location.",
-    urgency: "critical",
-  },
-  fever: {
-    response: "A fever can indicate various conditions. What's your current temperature? Are you experiencing any other symptoms like body aches, chills, or sore throat?",
-    urgency: "normal",
-  },
-  default: {
-    response: "Thank you for sharing. Could you describe your symptoms in more detail? When did they start, and have you noticed any patterns or triggers?",
-    urgency: "normal",
-  },
-};
-
 const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [urgencyLevel, setUrgencyLevel] = useState<"normal" | "urgent" | "critical">("normal");
@@ -74,7 +51,6 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
     setIsTyping(true);
 
     try {
-      // Call the backend API
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -121,31 +97,29 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)] pt-16">
-      {/* Chat Header */}
-      <div className="bg-glass border-b border-border/50 px-4 py-3 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" onClick={onBack}>
+      <div className="bg-glass border-b border-border/50 px-3 sm:px-4 py-3 flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <Button variant="ghost" size="icon" onClick={onBack} className="shrink-0">
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <div>
-            <h2 className="font-display font-semibold text-foreground">Healix AI</h2>
+          <div className="min-w-0">
+            <h2 className="font-display font-semibold text-foreground truncate">Healix AI</h2>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-success" />
+              <span className="w-2 h-2 rounded-full bg-success shrink-0" />
               <span className="text-xs text-muted-foreground">Online</span>
             </div>
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
-          <UrgencyBadge level={urgencyLevel} />
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <UrgencyBadge level={urgencyLevel} className="hidden xs:flex" />
           <Button variant="ghost" size="icon">
             <MoreVertical className="w-5 h-5" />
           </Button>
         </div>
       </div>
 
-      {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
         {messages.map((message) => (
           <ChatMessage
             key={message.id}
@@ -169,8 +143,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
-      <div className="p-4 shrink-0">
+      <div className="p-3 sm:p-4 shrink-0">
         <ChatInput onSend={handleSend} disabled={isTyping} />
       </div>
     </div>

@@ -1,15 +1,18 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "healix-care-guardian",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:all": "concurrently \"npm run dev\" \"npm run backend\"",
     "backend": "node backend/index.js",
+    "backend:dev": "node --watch backend/index.js",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "NODE_ENV=production node backend/index.js",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

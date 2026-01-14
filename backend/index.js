@@ -2,18 +2,62 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const isProduction = NODE_ENV === 'production';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = process.env.GEMINI_API_KEY ? new GoogleGenerativeAI(process.env.GEMINI_API_KEY) : null;
 
-app.use(cors());
-app.use(express.json());
+const corsOptions = {
+  origin: isProduction 
+    ? process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:8080']
+    : ['http://localhost:8080', 'http://localhost:3000', 'http://127.0.0.1:8080'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+app.use(cors(corsOptions));
 
-const SYSTEM_PROMPT = `You are Helix, an AI healthcare assistant. Your role is to:
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+
+const rateLimitMap = new Map();
+
+function rateLimit(windowMs, maxRequests) {
+  return (req, res, next) => {
+    const ip = req.ip || req.connection.remoteAddress;
+    const now = Date.now();
+    const windowStart = now - windowMs;
+    
+    if (!rateLimitMap.has(ip)) {
+      rateLimitMap.set(ip, []);
+    }
+    
+    const requests = rateLimitMap.get(ip).filter(time => time > windowStart);
+    
+    if (requests.length >= maxRequests) {
+      return res.status(429).json({ error: 'Too many requests, please try again later' });
+    }
+    
+    requests.push(now);
+    rateLimitMap.set(ip, requests);
+    next();
+  };
+}
+
+const apiLimiter = rateLimit(15 * 60 * 1000, 100);
+const chatLimiter = rateLimit(60 * 1000, 20);
+
+const SYSTEM_PROMPT = `You are Healix, an AI healthcare assistant. Your role is to:
 1. Listen to patients' symptoms with empathy and care
 2. Ask relevant follow-up questions to better understand their condition
 3. Assess urgency levels (normal, urgent, critical)
@@ -29,18 +73,17 @@ Important guidelines:
 
 Keep responses concise but informative, around 2-4 sentences.`;
 
-
 const fallbackResponses = {
   headache: "I understand you're experiencing a headache. Can you tell me more about it? How long have you had it, and is it accompanied by any other symptoms like nausea, sensitivity to light, or fever?",
-  chest: " Chest pain can be serious. Are you experiencing any of these symptoms: difficulty breathing, pain radiating to arm/jaw, sweating, or dizziness? If yes, please seek emergency care immediately.",
-  breathing: " Difficulty breathing requires immediate attention. If you're struggling to breathe, please call emergency services (911) immediately or have someone take you to the nearest emergency room.",
+  chest: "Chest pain can be serious. Are you experiencing any of these symptoms: difficulty breathing, pain radiating to arm/jaw, sweating, or dizziness? If yes, please seek emergency care immediately.",
+  breathing: "Difficulty breathing requires immediate attention. If you're struggling to breathe, please call emergency services (911) immediately or have someone take you to the nearest emergency room.",
   fever: "A fever can indicate various conditions. What's your current temperature? Are you experiencing any other symptoms like body aches, chills, or sore throat?",
   stomach: "Stomach issues can have many causes. Can you describe the pain - is it sharp, dull, or cramping? When did it start and have you had any changes in appetite or bowel movements?",
   default: "Thank you for sharing your symptoms with me. Could you describe them in more detail? When did they start, how severe are they on a scale of 1-10, and have you noticed any patterns or triggers?"
 };
 
 function getFallbackResponse(message) {
-  const lowerMessage = message.toLowerCase();
+  const lowerMessage = (message || '').toLowerCase();
   
   if (lowerMessage.includes('headache') || lowerMessage.includes('head')) {
     return { response: fallbackResponses.headache, urgency: 'normal' };
@@ -61,7 +104,41 @@ function getFallbackResponse(message) {
   return { response: fallbackResponses.default, urgency: 'normal' };
 }
 
-app.post('/api/chat', async (req, res) => {
+function determineUrgency(message, response) {
+  const lowerMessage = (message || '').toLowerCase();
+  const lowerResponse = (response || '').toLowerCase();
+
+  if (lowerMessage.includes('chest pain') || 
+      lowerMessage.includes('difficulty breathing') || 
+      lowerMessage.includes("can't breathe") ||
+      lowerMessage.includes('severe bleeding') ||
+      lowerMessage.includes('unconscious') ||
+      lowerMessage.includes('stroke') ||
+      lowerResponse.includes('emergency') ||
+      lowerResponse.includes('911') ||
+      lowerResponse.includes('ambulance')) {
+    return 'critical';
+  }
+  
+  if (lowerMessage.includes('chest') || 
+      lowerMessage.includes('breathing') ||
+      lowerMessage.includes('severe pain') ||
+      lowerMessage.includes('high fever') ||
+      lowerResponse.includes('urgent') ||
+      lowerResponse.includes('see a doctor soon') ||
+      lowerResponse.includes('medical attention')) {
+    return 'urgent';
+  }
+  
+  return 'normal';
+}
+
+function sanitizeInput(input) {
+  if (typeof input !== 'string') return '';
+  return input.trim().slice(0, 2000);
+}
+
+app.post('/api/chat', apiLimiter, chatLimiter, async (req, res) => {
   try {
     const { message, conversationHistory = [] } = req.body;
 
@@ -69,42 +146,39 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Use gemini-2.0-flash (the currently available model)
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const sanitizedMessage = sanitizeInput(message);
+    
+    if (!sanitizedMessage) {
+      return res.status(400).json({ error: 'Invalid message format' });
+    }
 
+    if (!genAI) {
+      const fallback = getFallbackResponse(sanitizedMessage);
+      return res.json({
+        response: fallback.response + "\n\n(AI service is currently unavailable. Using basic response system.)",
+        urgency: fallback.urgency,
+        timestamp: new Date().toISOString(),
+        fallback: true
+      });
+    }
+
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     let prompt = `${SYSTEM_PROMPT}\n\nConversation history:\n`;
     
-   
-    conversationHistory.forEach((msg) => {
-      prompt += `${msg.role === 'user' ? 'Patient' : 'Helix'}: ${msg.content}\n`;
+    const recentHistory = conversationHistory.slice(-10);
+    recentHistory.forEach((msg) => {
+      const role = msg.role === 'user' ? 'Patient' : 'Healix';
+      const content = sanitizeInput(msg.content);
+      prompt += `${role}: ${content}\n`;
     });
     
-    prompt += `\nPatient: ${message}\nHelix:`;
+    prompt += `\nPatient: ${sanitizedMessage}\nHealix:`;
 
     const result = await model.generateContent(prompt);
     const response = result.response.text();
 
-
-    let urgency = 'normal';
-    const lowerMessage = message.toLowerCase();
-    const lowerResponse = response.toLowerCase();
-
-    if (lowerMessage.includes('chest pain') || 
-        lowerMessage.includes('difficulty breathing') || 
-        lowerMessage.includes('can\'t breathe') ||
-        lowerMessage.includes('severe bleeding') ||
-        lowerResponse.includes('emergency') ||
-        lowerResponse.includes('911') ||
-        lowerResponse.includes('ambulance')) {
-      urgency = 'critical';
-    } else if (lowerMessage.includes('chest') || 
-               lowerMessage.includes('breathing') ||
-               lowerMessage.includes('severe pain') ||
-               lowerResponse.includes('urgent') ||
-               lowerResponse.includes('see a doctor soon')) {
-      urgency = 'urgent';
-    }
+    const urgency = determineUrgency(sanitizedMessage, response);
 
     res.json({
       response: response,
@@ -115,20 +189,17 @@ app.post('/api/chat', async (req, res) => {
   } catch (error) {
     console.error('Error generating response:', error.message);
     
-    // Handle rate limiting (429 errors) - use fallback responses
     if (error.status === 429) {
-      console.log('Rate limit exceeded, using fallback response');
-      const fallback = getFallbackResponse(req.body.message);
+      const fallback = getFallbackResponse(req.body.message || '');
       return res.json({
-        response: fallback.response + "\n\n_(Note: I'm currently experiencing high demand. For complex questions, please try again in a moment.)_",
+        response: fallback.response + "\n\n(High demand detected. Using backup response system.)",
         urgency: fallback.urgency,
         timestamp: new Date().toISOString(),
         fallback: true
       });
     }
     
-    // For other errors, also use fallback
-    const fallback = getFallbackResponse(req.body.message);
+    const fallback = getFallbackResponse(req.body.message || '');
     res.json({
       response: fallback.response,
       urgency: fallback.urgency,
@@ -139,21 +210,74 @@ app.post('/api/chat', async (req, res) => {
 });
 
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Helix backend is running', apiKeyConfigured: !!process.env.GEMINI_API_KEY });
+  res.json({ 
+    status: 'ok', 
+    message: 'Healix backend is running',
+    environment: NODE_ENV,
+    apiKeyConfigured: !!process.env.GEMINI_API_KEY,
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
+app.get('/api/status', (req, res) => {
+  res.json({
+    service: 'Healix Healthcare API',
+    version: '1.0.0',
+    status: 'operational',
+    endpoints: {
+      chat: '/api/chat',
+      health: '/api/health',
+      status: '/api/status'
+    }
+  });
+});
+
+if (isProduction) {
+  const distPath = path.join(__dirname, '../dist');
+  app.use(express.static(distPath));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
+app.use((err, req, res, next) => {
+  console.error('Server Error:', err);
+  res.status(500).json({ 
+    error: 'Internal server error',
+    message: isProduction ? 'Something went wrong' : err.message
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint not found' });
 });
 
 const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Helix backend server running on port ${PORT}`);
+  console.log(`Healix backend server running on port ${PORT}`);
+  console.log(`Environment: ${NODE_ENV}`);
   console.log(`API endpoint: http://localhost:${PORT}/api/chat`);
+  console.log(`Health check: http://localhost:${PORT}/api/health`);
   console.log(`API Key configured: ${process.env.GEMINI_API_KEY ? 'Yes' : 'No'}`);
 });
 
-// Keep the server running
 server.on('error', (err) => {
   console.error('Server error:', err);
 });
 
-process.on('SIGTERM', () => {
-  console.log('Shutting down server...');
-  server.close(() => process.exit(0));
-});
+const gracefulShutdown = (signal) => {
+  console.log(`\n${signal} received. Starting graceful shutdown...`);
+  server.close(() => {
+    console.log('HTTP server closed.');
+    process.exit(0);
+  });
+  
+  setTimeout(() => {
+    console.error('Forced shutdown after timeout');
+    process.exit(1);
+  }, 10000);
+};
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
