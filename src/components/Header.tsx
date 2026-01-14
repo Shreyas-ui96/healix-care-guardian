@@ -68,8 +68,8 @@ const Header = ({ onEmergencyClick }: HeaderProps = {}) => {
               <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
             </div>
             <span className="font-display font-bold text-base sm:text-xl text-foreground truncate">
-              <span className="hidden sm:inline">Healix-Health Can't Wait</span>
-              <span className="sm:hidden">Healix</span>
+              <span className="hidden sm:inline">Synkcare-Health Can't Wait</span>
+              <span className="sm:hidden">Synkcare</span>
             </span>
           </Link>
           

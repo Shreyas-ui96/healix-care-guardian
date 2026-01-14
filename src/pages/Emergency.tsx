@@ -38,7 +38,7 @@ const Emergency = () => {
       icon: Heart,
       title: "Cardiac Emergency",
       symptoms: ["Chest pain", "Shortness of breath", "Irregular heartbeat"],
-      action: "Call 911 immediately",
+      action: "Call 108 immediately",
       color: "from-red-500 to-rose-600",
     },
     {
@@ -52,7 +52,7 @@ const Emergency = () => {
       icon: AlertTriangle,
       title: "Severe Injury",
       symptoms: ["Heavy bleeding", "Fractures", "Head trauma"],
-      action: "Apply first aid, call 911",
+      action: "Apply first aid, call 108",
       color: "from-yellow-500 to-orange-500",
     },
     {
@@ -74,7 +74,7 @@ const Emergency = () => {
     {
       step: "2",
       title: "Call for Help",
-      description: "Dial emergency services immediately (911 in US)",
+      description: "Dial emergency services immediately (108 in India)",
       icon: Phone,
     },
     {
@@ -101,7 +101,7 @@ const Emergency = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Emergency Services | Healix - Immediate Medical Assistance</title>
+        <title>Emergency Services | Synkcare - Immediate Medical Assistance</title>
         <meta name="description" content="Access emergency medical services, learn about emergency protocols, and get immediate help when you need it most." />
       </Helmet>
       
@@ -113,7 +113,7 @@ const Emergency = () => {
             <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-destructive shrink-0" />
             <AlertTitle className="text-destructive font-bold text-sm sm:text-base">Life-Threatening Emergency?</AlertTitle>
             <AlertDescription className="text-foreground text-xs sm:text-sm">
-              If you or someone is experiencing a life-threatening emergency, call 911 immediately or go to the nearest emergency room.
+              If you or someone is experiencing a life-threatening emergency, call 108 immediately or go to the nearest emergency room.
             </AlertDescription>
           </Alert>
 

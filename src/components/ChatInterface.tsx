@@ -19,7 +19,7 @@ interface ChatInterfaceProps {
 const initialMessages: Message[] = [
   {
     id: "1",
-    content: "Hello! I'm Healix, your AI healthcare assistant. I'm here to help assess your symptoms and connect you with the right care. How are you feeling today?",
+    content: "Hello! I'm Synkcare, your AI healthcare assistant. I'm here to help assess your symptoms and connect you with the right care. How are you feeling today?",
     role: "assistant",
     timestamp: "Just now",
   },
@@ -103,7 +103,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           <div className="min-w-0">
-            <h2 className="font-display font-semibold text-foreground truncate">Healix AI</h2>
+            <h2 className="font-display font-semibold text-foreground truncate">Synkcare AI</h2>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-success shrink-0" />
               <span className="text-xs text-muted-foreground">Online</span>
@@ -136,7 +136,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
               <span className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: "150ms" }} />
               <span className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: "300ms" }} />
             </div>
-            <span>Healix is typing...</span>
+            <span>Synkcare is typing...</span>
           </div>
         )}
         

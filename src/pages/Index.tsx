@@ -144,8 +144,8 @@ const Index = () => {
     return (
       <div className="min-h-screen bg-background">
         <Helmet>
-          <title>Chat Consultation | Healix - AI Healthcare Assistant</title>
-          <meta name="description" content="Chat with Healix AI for instant medical symptom assessment and healthcare guidance." />
+          <title>Chat Consultation | Synkcare - AI Healthcare Assistant</title>
+          <meta name="description" content="Chat with Synkcare AI for instant medical symptom assessment and healthcare guidance." />
         </Helmet>
         <Header onEmergencyClick={() => setShowEmergency(true)} />
         <ChatInterface onBack={() => setShowChat(false)} />
@@ -165,10 +165,10 @@ const Index = () => {
       />
       
       <Helmet>
-        <title>Healix - 24/7 AI-Powered Healthcare Assistant</title>
+        <title>Synkcare - 24/7 AI-Powered Healthcare Assistant</title>
         <meta 
           name="description" 
-          content="Healix is your 24/7 AI healthcare assistant providing instant medical triage, emergency response, telemedicine, and personalized healthcare services." 
+          content="Synkcare is your 24/7 AI healthcare assistant providing instant medical triage, emergency response, telemedicine, and personalized healthcare services." 
         />
         <meta name="keywords" content="healthcare, AI assistant, medical triage, telemedicine, emergency response, digital health" />
       </Helmet>
@@ -206,7 +206,7 @@ const Index = () => {
                 {
                   step: "2",
                   title: "Call for Help",
-                  description: "Dial emergency services immediately (911 in US)",
+                  description: "Dial emergency services immediately (108 in India)",
                 },
                 {
                   step: "3",
@@ -282,7 +282,7 @@ const Index = () => {
         <footer className="py-8 sm:py-12 px-3 sm:px-4 border-t border-border">
           <div className="container mx-auto max-w-6xl text-center">
             <p className="text-muted-foreground text-xs sm:text-sm">
-              2024 Healix. Your health, always accessible. For emergencies, always dial local emergency services.
+              2024 Synkcare. Your health, always accessible. For emergencies, always dial local emergency services.
             </p>
           </div>
         </footer>

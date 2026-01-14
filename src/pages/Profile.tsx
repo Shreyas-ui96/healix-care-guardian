@@ -78,8 +78,8 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>My Profile | Healix - Personal Health Dashboard</title>
-        <meta name="description" content="Manage your personal information, health data, and account settings on Healix." />
+        <title>My Profile | Synkcare - Personal Health Dashboard</title>
+        <meta name="description" content="Manage your personal information, health data, and account settings on Synkcare." />
       </Helmet>
       
       <Header />

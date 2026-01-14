@@ -1,4 +1,4 @@
-# Healix Care Guardian
+# Synkcare Care Guardian
 
 ## Project Overview
 

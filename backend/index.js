@@ -57,7 +57,7 @@ function rateLimit(windowMs, maxRequests) {
 const apiLimiter = rateLimit(15 * 60 * 1000, 100);
 const chatLimiter = rateLimit(60 * 1000, 20);
 
-const SYSTEM_PROMPT = `You are Healix, an AI healthcare assistant. Your role is to:
+const SYSTEM_PROMPT = `You are Synkcare, an AI healthcare assistant. Your role is to:
 1. Listen to patients' symptoms with empathy and care
 2. Ask relevant follow-up questions to better understand their condition
 3. Assess urgency levels (normal, urgent, critical)
@@ -76,7 +76,7 @@ Keep responses concise but informative, around 2-4 sentences.`;
 const fallbackResponses = {
   headache: "I understand you're experiencing a headache. Can you tell me more about it? How long have you had it, and is it accompanied by any other symptoms like nausea, sensitivity to light, or fever?",
   chest: "Chest pain can be serious. Are you experiencing any of these symptoms: difficulty breathing, pain radiating to arm/jaw, sweating, or dizziness? If yes, please seek emergency care immediately.",
-  breathing: "Difficulty breathing requires immediate attention. If you're struggling to breathe, please call emergency services (911) immediately or have someone take you to the nearest emergency room.",
+  breathing: "Difficulty breathing requires immediate attention. If you're struggling to breathe, please call emergency services (108) immediately or have someone take you to the nearest emergency room.",
   fever: "A fever can indicate various conditions. What's your current temperature? Are you experiencing any other symptoms like body aches, chills, or sore throat?",
   stomach: "Stomach issues can have many causes. Can you describe the pain - is it sharp, dull, or cramping? When did it start and have you had any changes in appetite or bowel movements?",
   default: "Thank you for sharing your symptoms with me. Could you describe them in more detail? When did they start, how severe are they on a scale of 1-10, and have you noticed any patterns or triggers?"
@@ -115,7 +115,7 @@ function determineUrgency(message, response) {
       lowerMessage.includes('unconscious') ||
       lowerMessage.includes('stroke') ||
       lowerResponse.includes('emergency') ||
-      lowerResponse.includes('911') ||
+      lowerResponse.includes('108') ||
       lowerResponse.includes('ambulance')) {
     return 'critical';
   }
@@ -168,12 +168,12 @@ app.post('/api/chat', apiLimiter, chatLimiter, async (req, res) => {
     
     const recentHistory = conversationHistory.slice(-10);
     recentHistory.forEach((msg) => {
-      const role = msg.role === 'user' ? 'Patient' : 'Healix';
+      const role = msg.role === 'user' ? 'Patient' : 'Synkcare';
       const content = sanitizeInput(msg.content);
       prompt += `${role}: ${content}\n`;
     });
     
-    prompt += `\nPatient: ${sanitizedMessage}\nHealix:`;
+    prompt += `\nPatient: ${sanitizedMessage}\nSynkcare:`;
 
     const result = await model.generateContent(prompt);
     const response = result.response.text();
@@ -212,7 +212,7 @@ app.post('/api/chat', apiLimiter, chatLimiter, async (req, res) => {
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'ok', 
-    message: 'Healix backend is running',
+    message: 'Synkcare backend is running',
     environment: NODE_ENV,
     apiKeyConfigured: !!process.env.GEMINI_API_KEY,
     timestamp: new Date().toISOString(),
@@ -222,7 +222,7 @@ app.get('/api/health', (req, res) => {
 
 app.get('/api/status', (req, res) => {
   res.json({
-    service: 'Healix Healthcare API',
+    service: 'Synkcare Healthcare API',
     version: '1.0.0',
     status: 'operational',
     endpoints: {
@@ -255,7 +255,7 @@ app.use((req, res) => {
 });
 
 const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Healix backend server running on port ${PORT}`);
+  console.log(`Synkcare backend server running on port ${PORT}`);
   console.log(`Environment: ${NODE_ENV}`);
   console.log(`API endpoint: http://localhost:${PORT}/api/chat`);
   console.log(`Health check: http://localhost:${PORT}/api/health`);

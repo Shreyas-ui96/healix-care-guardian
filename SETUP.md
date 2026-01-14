@@ -1,8 +1,8 @@
-# Healix AI Chat Setup Guide
+# Synkcare AI Chat Setup Guide
 
 ##  Quick Start
 
-Your Healix AI chat system is now integrated with Google's Gemini API!
+Your Synkcare AI chat system is now integrated with Google's Gemini API!
 
 ### Prerequisites
 - Node.js installed

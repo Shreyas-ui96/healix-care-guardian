@@ -87,8 +87,8 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Our Services | Healix - Comprehensive Healthcare Solutions</title>
-        <meta name="description" content="Explore Healix's comprehensive healthcare services including AI consultations, video calls, specialist care, and health monitoring." />
+        <title>Our Services | Synkcare - Comprehensive Healthcare Solutions</title>
+        <meta name="description" content="Explore Synkcare's comprehensive healthcare services including AI consultations, video calls, specialist care, and health monitoring." />
       </Helmet>
       
       <Header />
@@ -170,7 +170,7 @@ const Services = () => {
                 Ready to Experience Better Healthcare?
               </h2>
               <p className="text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
-                Join thousands of users who trust Healix for their healthcare needs. Get started today with a free consultation.
+                Join thousands of users who trust Synkcare for their healthcare needs. Get started today with a free consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button variant="hero" size="lg" className="gap-2">

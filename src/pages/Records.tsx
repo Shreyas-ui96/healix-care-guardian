@@ -103,8 +103,8 @@ const Records = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Medical Records | Healix - Secure Health Records Management</title>
-        <meta name="description" content="Access, manage, and share your medical records securely with Healix's encrypted health records system." />
+        <title>Medical Records | Synkcare - Secure Health Records Management</title>
+        <meta name="description" content="Access, manage, and share your medical records securely with Synkcare's encrypted health records system." />
       </Helmet>
       
       <Header />

@@ -34,7 +34,7 @@ const EmergencyModal = ({ open, onOpenChange }: EmergencyModalProps) => {
       icon: Heart,
       title: "Cardiac Emergency",
       symptoms: ["Chest pain", "Shortness of breath", "Irregular heartbeat"],
-      action: "Call 911 immediately",
+      action: "Call 108 immediately",
       color: "from-red-500 to-rose-600",
     },
     {
@@ -48,7 +48,7 @@ const EmergencyModal = ({ open, onOpenChange }: EmergencyModalProps) => {
       icon: AlertTriangle,
       title: "Severe Injury",
       symptoms: ["Heavy bleeding", "Fractures", "Head trauma"],
-      action: "Apply first aid, call 911",
+      action: "Apply first aid, call 108",
       color: "from-yellow-500 to-orange-500",
     },
     {
@@ -90,7 +90,7 @@ const EmergencyModal = ({ open, onOpenChange }: EmergencyModalProps) => {
               <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-destructive shrink-0" />
               <AlertTitle className="text-destructive font-bold text-sm sm:text-base">Life-Threatening Emergency?</AlertTitle>
               <AlertDescription className="text-foreground text-xs sm:text-sm">
-                If you or someone is experiencing a life-threatening emergency, call 911 immediately or go to the nearest emergency room.
+                If you or someone is experiencing a life-threatening emergency, call 108 immediately or go to the nearest emergency room.
               </AlertDescription>
             </Alert>
 
