@@ -1,0 +1,198 @@
+{
+  "Spontaneous pneumothorax": {
+    "severity": 2,
+    "icd10": "J93"
+  },
+  "Cluster headache": {
+    "severity": 3,
+    "icd10": "g44.009"
+  },
+  "Boerhaave": {
+    "severity": 2,
+    "icd10": "K22.3"
+  },
+  "Spontaneous rib fracture": {
+    "severity": 3,
+    "icd10": "S22.9"
+  },
+  "GERD": {
+    "severity": 3,
+    "icd10": "K21"
+  },
+  "HIV (initial infection)": {
+    "severity": 3,
+    "icd10": "B20"
+  },
+  "Anemia": {
+    "severity": 4,
+    "icd10": "D64.9"
+  },
+  "Viral pharyngitis": {
+    "severity": 4,
+    "icd10": "J02.9"
+  },
+  "Inguinal hernia": {
+    "severity": 3,
+    "icd10": "K40"
+  },
+  "Myasthenia gravis": {
+    "severity": 3,
+    "icd10": "G70.0"
+  },
+  "Whooping cough": {
+    "severity": 4,
+    "icd10": "A37"
+  },
+  "Anaphylaxis": {
+    "severity": 1,
+    "icd10": "T78.0"
+  },
+  "Epiglottitis": {
+    "severity": 2,
+    "icd10": "J05.1"
+  },
+  "Guillain-Barr\u00e9 syndrome": {
+    "severity": 2,
+    "icd10": "G61.0"
+  },
+  "Acute laryngitis": {
+    "severity": 4,
+    "icd10": "J04.0"
+  },
+  "Croup": {
+    "severity": 2,
+    "icd10": "J05.0"
+  },
+  "PSVT": {
+    "severity": 2,
+    "icd10": "I47.1"
+  },
+  "Atrial fibrillation": {
+    "severity": 3,
+    "icd10": "I48.91"
+  },
+  "Bronchiectasis": {
+    "severity": 3,
+    "icd10": "J47"
+  },
+  "Allergic sinusitis": {
+    "severity": 4,
+    "icd10": "J30"
+  },
+  "Chagas": {
+    "severity": 3,
+    "icd10": "B57"
+  },
+  "Scombroid food poisoning": {
+    "severity": 2,
+    "icd10": "T61.1"
+  },
+  "Myocarditis": {
+    "severity": 2,
+    "icd10": "I51.4"
+  },
+  "Larygospasm": {
+    "severity": 1,
+    "icd10": "J38.5"
+  },
+  "Acute dystonic reactions": {
+    "severity": 2,
+    "icd10": "G24.02"
+  },
+  "Localized edema": {
+    "severity": 4,
+    "icd10": "R60.0"
+  },
+  "SLE": {
+    "severity": 4,
+    "icd10": "M32"
+  },
+  "Tuberculosis": {
+    "severity": 3,
+    "icd10": "a15"
+  },
+  "Unstable angina": {
+    "severity": 2,
+    "icd10": "I20.0"
+  },
+  "Stable angina": {
+    "severity": 2,
+    "icd10": "I20.9"
+  },
+  "Ebola": {
+    "severity": 1,
+    "icd10": "a98.4"
+  },
+  "Acute otitis media": {
+    "severity": 4,
+    "icd10": "H66.90"
+  },
+  "Panic attack": {
+    "severity": 5,
+    "icd10": "f41"
+  },
+  "Bronchospasm / acute asthma exacerbation": {
+    "severity": 3,
+    "icd10": "J45"
+  },
+  "Bronchitis": {
+    "severity": 4,
+    "icd10": "j40"
+  },
+  "Acute COPD exacerbation / infection": {
+    "severity": 3,
+    "icd10": "j44.1"
+  },
+  "Pulmonary embolism": {
+    "severity": 2,
+    "icd10": "i26"
+  },
+  "URTI": {
+    "severity": 5,
+    "icd10": "j06.9"
+  },
+  "Influenza": {
+    "severity": 3,
+    "icd10": "j11.1"
+  },
+  "Pneumonia": {
+    "severity": 3,
+    "icd10": "j17, j18"
+  },
+  "Acute rhinosinusitis": {
+    "severity": 4,
+    "icd10": "j01"
+  },
+  "Chronic rhinosinusitis": {
+    "severity": 5,
+    "icd10": "j32"
+  },
+  "Bronchiolitis": {
+    "severity": 3,
+    "icd10": "j21"
+  },
+  "Pulmonary neoplasm": {
+    "severity": 3,
+    "icd10": "c34"
+  },
+  "Possible NSTEMI / STEMI": {
+    "severity": 1,
+    "icd10": "I21"
+  },
+  "Sarcoidosis": {
+    "severity": 4,
+    "icd10": "d86"
+  },
+  "Pancreatic neoplasm": {
+    "severity": 3,
+    "icd10": "c25"
+  },
+  "Acute pulmonary edema": {
+    "severity": 1,
+    "icd10": "J81.0"
+  },
+  "Pericarditis": {
+    "severity": 4,
+    "icd10": "I30"
+  }
+}

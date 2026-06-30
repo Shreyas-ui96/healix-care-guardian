@@ -28,3 +28,12 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Python ML model binaries & cache
+*.joblib
+__pycache__/
+*.pyc
+*.csv
+*.joblib
+*.joblib.tmp
+

@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 dotenv.config();
 
@@ -232,6 +233,138 @@ app.get('/api/status', (req, res) => {
     }
   });
 });
+
+// --- ML Disease Prediction Proxies and Symptom Extractor ---
+const ML_SERVICE_URL = 'http://localhost:5001';
+
+// Load evidence vocabulary for Gemini extractor
+const vocabPath = path.join(__dirname, 'ml/models/evidence_vocab.json');
+let evidenceVocab = {};
+let validSymptomsList = [];
+try {
+  if (fs.existsSync(vocabPath)) {
+    evidenceVocab = JSON.parse(fs.readFileSync(vocabPath, 'utf8'));
+    validSymptomsList = Object.values(evidenceVocab).map(v => ({
+      key: v.key,
+      description: v.question
+    }));
+    console.log(`Loaded ${validSymptomsList.length} symptoms from vocab for extraction mapping.`);
+  } else {
+    console.warn(`Vocab file not found at ${vocabPath}. Extraction mapping will use keywords.`);
+  }
+} catch (err) {
+  console.error('Error loading evidence vocabulary:', err);
+}
+
+app.get('/api/disease/symptoms', async (req, res) => {
+  try {
+    const response = await fetch(`${ML_SERVICE_URL}/api/v1/disease/symptoms`);
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error('Error fetching symptoms from ML service:', err.message);
+    res.status(502).json({ error: 'ML service is currently offline. Please start the ML python service.' });
+  }
+});
+
+app.get('/api/disease/diseases', async (req, res) => {
+  try {
+    const response = await fetch(`${ML_SERVICE_URL}/api/v1/disease/diseases`);
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error('Error fetching diseases from ML service:', err.message);
+    res.status(502).json({ error: 'ML service is currently offline. Please start the ML python service.' });
+  }
+});
+
+app.post('/api/disease/predict', async (req, res) => {
+  try {
+    const response = await fetch(`${ML_SERVICE_URL}/api/v1/disease/predict`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(req.body),
+    });
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      return res.status(response.status).json({ error: errorText });
+    }
+    
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error('Error calling ML predict:', err.message);
+    res.status(502).json({ error: 'ML service is currently offline. Please start the ML python service.' });
+  }
+});
+
+app.post('/api/disease/extract', apiLimiter, async (req, res) => {
+  try {
+    const { text } = req.body;
+    if (!text) {
+      return res.status(400).json({ error: 'Text is required' });
+    }
+
+    if (!genAI || validSymptomsList.length === 0) {
+      // Fallback keyword search
+      const normalized = text.toLowerCase();
+      const detected = [];
+      for (const [code, item] of Object.entries(evidenceVocab)) {
+        const key = item.key.replace(/_/g, ' ');
+        if (normalized.includes(key) || normalized.includes(item.question.toLowerCase().replace(/[?.,]/g, ''))) {
+          detected.push(item.key);
+        }
+      }
+      return res.json({ symptoms: detected, fallback: true });
+    }
+
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    
+    // Create a concise list of symptom keys and questions
+    const symptomsListStr = validSymptomsList.map(s => `${s.key}: "${s.description}"`).join('\n');
+    
+    const prompt = `You are a clinical symptom extraction AI. Match the user's symptoms in the user text to the valid symptom keys below.
+    
+Valid Symptom Keys:
+${symptomsListStr}
+
+User text: "${text}"
+
+Respond ONLY with a JSON list of matching keys. Example: ["a_fever", "pain_somewhere_related_to_your_reason_for"]
+Do not wrap in backticks or markdown block. Just the raw JSON.`;
+
+    const result = await model.generateContent(prompt);
+    let responseText = result.response.text().trim();
+    
+    // Sanitize markdown if generated
+    if (responseText.startsWith('```json')) {
+      responseText = responseText.substring(7, responseText.length - 3).trim();
+    } else if (responseText.startsWith('```')) {
+      responseText = responseText.substring(3, responseText.length - 3).trim();
+    }
+
+    try {
+      const keys = JSON.parse(responseText);
+      if (Array.isArray(keys)) {
+        // Validate keys exist in vocab
+        const validKeys = keys.filter(k => Object.values(evidenceVocab).some(v => v.key === k));
+        return res.json({ symptoms: validKeys });
+      }
+    } catch (e) {
+      console.error('Failed to parse Gemini symptom extract response:', responseText, e);
+    }
+
+    // Keyword fallback if JSON parse fails
+    return res.json({ symptoms: [] });
+  } catch (error) {
+    console.error('Error extracting symptoms:', error);
+    res.status(500).json({ error: 'Failed to extract symptoms' });
+  }
+});
+// -----------------------------------------------------------
 
 if (isProduction) {
   const distPath = path.join(__dirname, '../dist');

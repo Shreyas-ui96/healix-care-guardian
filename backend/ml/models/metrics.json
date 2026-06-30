@@ -1,0 +1,14 @@
+{
+  "test_accuracy": 0.9851135094901377,
+  "test_top3_accuracy": 0.9996278377372534,
+  "test_f1_macro": 0.9743203025129739,
+  "test_precision_macro": 0.9766586292311303,
+  "test_recall_macro": 0.9751179423135601,
+  "n_train_samples": 21495,
+  "n_test_samples": 5374,
+  "n_features": 223,
+  "n_classes": 49,
+  "dataset": "DDXPlus (English), Mila/Universite de Montreal -- real clinical-knowledge-base-derived synthetic patients with overlapping symptom patterns",
+  "note": "R^2 not applicable: multi-class classification task (disease name), not regression.",
+  "model_choice_rationale": "Random Forest selected over higher-raw-F1 alternatives (Logistic Regression, Naive Bayes) due to better-calibrated confidence on sparse/partial symptom input -- critical for realistic chatbot usage where users rarely report a full textbook symptom list."
+}

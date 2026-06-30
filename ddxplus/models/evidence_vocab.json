@@ -1,0 +1,1117 @@
+{
+  "E_91": {
+    "key": "a_fever",
+    "question": "Do you have a fever (either felt or measured with a thermometer)?",
+    "is_antecedent": false
+  },
+  "E_55": {
+    "key": "feel_pain_somewhere",
+    "question": "Do you feel pain somewhere?",
+    "is_antecedent": false
+  },
+  "E_53": {
+    "key": "pain_somewhere_related_to_your_reason_for",
+    "question": "Do you have pain somewhere, related to your reason for consulting?",
+    "is_antecedent": false
+  },
+  "E_57": {
+    "key": "does_the_pain_radiate_to_another_location",
+    "question": "Does the pain radiate to another location?",
+    "is_antecedent": false
+  },
+  "E_54": {
+    "key": "characterize_your_pain",
+    "question": "Characterize your pain:",
+    "is_antecedent": false
+  },
+  "E_59": {
+    "key": "fast_did_the_pain_appear",
+    "question": "How fast did the pain appear?",
+    "is_antecedent": false
+  },
+  "E_56": {
+    "key": "intense_is_the_pain",
+    "question": "How intense is the pain?",
+    "is_antecedent": false
+  },
+  "E_58": {
+    "key": "precisely_is_the_pain_located",
+    "question": "How precisely is the pain located?",
+    "is_antecedent": false
+  },
+  "E_159": {
+    "key": "lose_consciousness",
+    "question": "Did you lose consciousness?",
+    "is_antecedent": false
+  },
+  "E_133": {
+    "key": "where_is_the_affected_region_located",
+    "question": "Where is the affected region located?",
+    "is_antecedent": false
+  },
+  "E_129": {
+    "key": "any_lesions_redness_or_problems_on_your_skin",
+    "question": "Do you have any lesions, redness or problems on your skin that you believe are related to the condition you are consulting for?",
+    "is_antecedent": false
+  },
+  "E_130": {
+    "key": "color_is_the_rash",
+    "question": "What color is the rash?",
+    "is_antecedent": false
+  },
+  "E_134": {
+    "key": "intense_is_the_pain_caused_by_the_rash",
+    "question": "How intense is the pain caused by the rash?",
+    "is_antecedent": false
+  },
+  "E_132": {
+    "key": "rash_swollen",
+    "question": "Is the rash swollen?",
+    "is_antecedent": false
+  },
+  "E_136": {
+    "key": "severe_is_the_itching",
+    "question": "How severe is the itching?",
+    "is_antecedent": false
+  },
+  "E_135": {
+    "key": "lesion_larger_than_1cm",
+    "question": "Is the lesion (or are the lesions) larger than 1cm?",
+    "is_antecedent": false
+  },
+  "E_131": {
+    "key": "r_lesions_peel_off",
+    "question": "Do your lesions peel off?",
+    "is_antecedent": false
+  },
+  "E_154": {
+    "key": "skin_much_paler_than_usual",
+    "question": "Is your skin much paler than usual?",
+    "is_antecedent": false
+  },
+  "E_155": {
+    "key": "feel_your_heart_is_beating_fast_irregularly",
+    "question": "Do you feel your heart is beating fast (racing), irregularly (missing a beat) or do you feel palpitations?",
+    "is_antecedent": false
+  },
+  "E_210": {
+    "key": "recently_thrown_up_blood_or_something",
+    "question": "Have you recently thrown up blood or something resembling coffee beans?",
+    "is_antecedent": false
+  },
+  "E_140": {
+    "key": "recently_had_stools_that_were_black",
+    "question": "Have you recently had stools that were black (like coal)?",
+    "is_antecedent": false
+  },
+  "E_51": {
+    "key": "had_diarrhea_or_an_increase_in_stool",
+    "question": "Have you had diarrhea or an increase in stool frequency?",
+    "is_antecedent": false
+  },
+  "E_75": {
+    "key": "feel_like_you_are_choking_or_suffocating",
+    "question": "Do you feel like you are (or were) choking or suffocating?",
+    "is_antecedent": false
+  },
+  "E_89": {
+    "key": "constantly_feel_fatigued_or_do_you_have",
+    "question": "Do you constantly feel fatigued or do you have non-restful sleep?",
+    "is_antecedent": false
+  },
+  "E_114": {
+    "key": "more_irritable_or_has_your_mood_been_very",
+    "question": "Are you more irritable or has your mood been very unstable recently?",
+    "is_antecedent": false
+  },
+  "E_82": {
+    "key": "feel_lightheaded_and_dizzy_or_do_you_feel",
+    "question": "Do you feel lightheaded and dizzy or do you feel like you are about to faint?",
+    "is_antecedent": false
+  },
+  "E_148": {
+    "key": "feeling_nauseous_or_do_you_feel_like",
+    "question": "Are you feeling nauseous or do you feel like vomiting?",
+    "is_antecedent": false
+  },
+  "E_94": {
+    "key": "had_chills_or_shivers",
+    "question": "Have you had chills or shivers?",
+    "is_antecedent": false
+  },
+  "E_220": {
+    "key": "pain_that_is_increased_when_you_breathe_in",
+    "question": "Do you have pain that is increased when you breathe in deeply?",
+    "is_antecedent": false
+  },
+  "E_161": {
+    "key": "recently_had_a_loss_of_appetite_or_do_you",
+    "question": "Have you recently had a loss of appetite or do you get full more quickly then usually?",
+    "is_antecedent": false
+  },
+  "E_179": {
+    "key": "light_red_blood_or_blood_clots_in_your_stool",
+    "question": "Have you noticed light red blood or blood clots in your stool?",
+    "is_antecedent": false
+  },
+  "E_162": {
+    "key": "had_an_involuntary_weight_loss_over_the_last",
+    "question": "Have you had an involuntary weight loss over the last 3 months?",
+    "is_antecedent": false
+  },
+  "E_173": {
+    "key": "a_burning_sensation_that_starts_in_your",
+    "question": "Do you have a burning sensation that starts in your stomach then goes up into your throat, and can be associated with a bitter taste in your mouth?",
+    "is_antecedent": false
+  },
+  "E_33": {
+    "key": "pain_that_improves_when_you_lean_forward",
+    "question": "Do you have pain that improves when you lean forward?",
+    "is_antecedent": false
+  },
+  "E_218": {
+    "key": "symptoms_that_are_increased_with_physical",
+    "question": "Do you have symptoms that are increased with physical exertion but alleviated with rest?",
+    "is_antecedent": false
+  },
+  "E_93": {
+    "key": "numbness_loss_of_sensation_or_tingling_in",
+    "question": "Do you have numbness, loss of sensation or tingling in the feet?",
+    "is_antecedent": false
+  },
+  "E_66": {
+    "key": "experiencing_shortness_of_breath_or",
+    "question": "Are you experiencing shortness of breath or difficulty breathing in a significant way?",
+    "is_antecedent": false
+  },
+  "E_163": {
+    "key": "had_any_vaginal_discharge",
+    "question": "Have you had any vaginal discharge?",
+    "is_antecedent": false
+  },
+  "E_30": {
+    "key": "feel_your_abdomen_is_bloated_or_distended",
+    "question": "Do you feel your abdomen is bloated or distended (swollen due to pressure from inside)?",
+    "is_antecedent": false
+  },
+  "E_127": {
+    "key": "feel_that_your_eyes_produce_excessive_tears",
+    "question": "Do you feel that your eyes produce excessive tears?",
+    "is_antecedent": false
+  },
+  "E_181": {
+    "key": "nasal_congestion_or_a_clear_runny_nose",
+    "question": "Do you have nasal congestion or a clear runny nose?",
+    "is_antecedent": false
+  },
+  "E_88": {
+    "key": "feel_so_tired_that_you_are_unable_to_do_your",
+    "question": "Do you feel so tired that you are unable to do your usual activities or are you stuck in your bed all day long?",
+    "is_antecedent": false
+  },
+  "E_43": {
+    "key": "lost_consciousness_associated_with_violent",
+    "question": "Have you lost consciousness associated with violent and sustained muscle contractions or had an absence episode?",
+    "is_antecedent": false
+  },
+  "E_156": {
+    "key": "had_weakness_or_paralysis_on_one_side_of_the",
+    "question": "Have you had weakness or paralysis on one side of the face, which may still be present or completely resolved?",
+    "is_antecedent": false
+  },
+  "E_144": {
+    "key": "diffuse_muscle_pain",
+    "question": "Do you have diffuse (widespread) muscle pain?",
+    "is_antecedent": false
+  },
+  "E_216": {
+    "key": "pain_that_is_increased_with_movement",
+    "question": "Do you have pain that is increased with movement?",
+    "is_antecedent": false
+  },
+  "E_201": {
+    "key": "a_cough",
+    "question": "Do you have a cough?",
+    "is_antecedent": false
+  },
+  "E_217": {
+    "key": "r_symptoms_worse_when_lying_down_and",
+    "question": "Are your symptoms worse when lying down and alleviated while sitting up?",
+    "is_antecedent": false
+  },
+  "E_215": {
+    "key": "symptoms_that_get_worse_after_eating",
+    "question": "Do you have symptoms that get worse after eating?",
+    "is_antecedent": false
+  },
+  "E_64": {
+    "key": "feel_out_of_breath_with_minimal_physical",
+    "question": "Do you feel out of breath with minimal physical effort?",
+    "is_antecedent": false
+  },
+  "E_96": {
+    "key": "gained_weight_recently",
+    "question": "Have you gained weight recently?",
+    "is_antecedent": false
+  },
+  "E_16": {
+    "key": "feel_anxious",
+    "question": "Do you feel anxious?",
+    "is_antecedent": true
+  },
+  "E_50": {
+    "key": "had_significantly_increased_sweating",
+    "question": "Have you had significantly increased sweating?",
+    "is_antecedent": false
+  },
+  "E_97": {
+    "key": "a_sore_throat",
+    "question": "Do you have a sore throat?",
+    "is_antecedent": false
+  },
+  "E_9": {
+    "key": "swollen_or_painful_lymph_nodes",
+    "question": "Do you have swollen or painful lymph nodes?",
+    "is_antecedent": false
+  },
+  "E_76": {
+    "key": "feel_slightly_dizzy_or_lightheaded",
+    "question": "Do you feel slightly dizzy or lightheaded?",
+    "is_antecedent": false
+  },
+  "E_102": {
+    "key": "consulting_because_you_have_high_blood",
+    "question": "Are you consulting because you have high blood pressure?",
+    "is_antecedent": true
+  },
+  "E_65": {
+    "key": "difficulty_swallowing_or_have_a_feeling_of",
+    "question": "Do you have difficulty swallowing, or have a feeling of discomfort/blockage when swallowing?",
+    "is_antecedent": false
+  },
+  "E_74": {
+    "key": "a_diffuse_redness_in_one_or_both_eyes",
+    "question": "Have you noticed a diffuse (widespread) redness in one or both eyes?",
+    "is_antecedent": false
+  },
+  "E_205": {
+    "key": "suddenly_have_difficulty_or_an_inability_to",
+    "question": "Do you suddenly have difficulty or an inability to open your mouth or have jaw pain when opening it?",
+    "is_antecedent": false
+  },
+  "E_63": {
+    "key": "difficulty_articulating_wordsspeaking",
+    "question": "Do you have difficulty articulating words/speaking?",
+    "is_antecedent": false
+  },
+  "E_128": {
+    "key": "ever_felt_like_you_were_suffocating_for_a",
+    "question": "Have you ever felt like you were suffocating for a very short time associated with inability to breathe or speak?",
+    "is_antecedent": false
+  },
+  "E_190": {
+    "key": "that_you_produce_more_saliva_than_usual",
+    "question": "Have you noticed that you produce more saliva than usual?",
+    "is_antecedent": false
+  },
+  "E_39": {
+    "key": "felt_confused_or_disorientated_lately",
+    "question": "Have you felt confused or disorientated lately?",
+    "is_antecedent": false
+  },
+  "E_212": {
+    "key": "that_the_tone_of_your_voice_has_become",
+    "question": "Have you noticed that the tone of your voice has become deeper, softer or hoarse?",
+    "is_antecedent": false
+  },
+  "E_206": {
+    "key": "painful_mouth_ulcers_or_sores",
+    "question": "Do you have painful mouth ulcers or sores?",
+    "is_antecedent": false
+  },
+  "E_52": {
+    "key": "the_perception_of_seeing_two_images_of_a",
+    "question": "Do you have the perception of seeing two images of a single object seen overlapping or adjacent to each other (double vision)?",
+    "is_antecedent": false
+  },
+  "E_203": {
+    "key": "intense_coughing_fits",
+    "question": "Do you have intense coughing fits?",
+    "is_antecedent": false
+  },
+  "E_38": {
+    "key": "pain_or_weakness_in_your_jaw",
+    "question": "Do you have pain or weakness in your jaw?",
+    "is_antecedent": false
+  },
+  "E_172": {
+    "key": "a_hard_time_openingraising_one_or_both",
+    "question": "Do you have a hard time opening/raising one or both eyelids?",
+    "is_antecedent": false
+  },
+  "E_84": {
+    "key": "feel_weakness_in_both_arms_andor_both_legs",
+    "question": "Do you feel weakness in both arms and/or both legs?",
+    "is_antecedent": false
+  },
+  "E_90": {
+    "key": "r_symptoms_of_muscle_weakness_increase_with",
+    "question": "Do your symptoms of muscle weakness increase with fatigue and/or stress?",
+    "is_antecedent": false
+  },
+  "E_211": {
+    "key": "vomited_several_times_or_have_you_made",
+    "question": "Have you vomited several times or have you made several efforts to vomit?",
+    "is_antecedent": false
+  },
+  "E_166": {
+    "key": "vomit_after_coughing",
+    "question": "Did you vomit after coughing?",
+    "is_antecedent": false
+  },
+  "E_112": {
+    "key": "wheeze_while_inhaling_or_is_your_breathing",
+    "question": "Do you wheeze while inhaling or is your breathing noisy after coughing spells?",
+    "is_antecedent": false
+  },
+  "E_178": {
+    "key": "any_unusual_bleeding_or_bruising_related_to",
+    "question": "Have you noticed any unusual bleeding or bruising related to your consultation today?",
+    "is_antecedent": false
+  },
+  "E_152": {
+    "key": "where_is_the_swelling_located",
+    "question": "Where is the swelling located?",
+    "is_antecedent": false
+  },
+  "E_151": {
+    "key": "swelling_in_one_or_more_areas_of_your_body",
+    "question": "Do you have swelling in one or more areas of your body?",
+    "is_antecedent": false
+  },
+  "E_45": {
+    "key": "been_coughing_up_blood",
+    "question": "Have you been coughing up blood?",
+    "is_antecedent": false
+  },
+  "E_194": {
+    "key": "a_high_pitched_sound_when_breathing_in",
+    "question": "Have you noticed a high pitched sound when breathing in?",
+    "is_antecedent": false
+  },
+  "E_83": {
+    "key": "weakness_in_your_facial_muscles_andor_eyes",
+    "question": "Have you noticed weakness in your facial muscles and/or eyes?",
+    "is_antecedent": false
+  },
+  "E_157": {
+    "key": "recently_had_numbness_loss_of_sensation_or",
+    "question": "Have you recently had numbness, loss of sensation or tingling, in both arms and legs and around your mouth?",
+    "is_antecedent": false
+  },
+  "E_176": {
+    "key": "previously_or_do_you_currently_have_any",
+    "question": "Did you previously, or do you currently, have any weakness/paralysis in one or more of your limbs or in your face?",
+    "is_antecedent": false
+  },
+  "E_42": {
+    "key": "been_in_contact_with_or_ate_something_that",
+    "question": "Have you been in contact with or ate something that you have an allergy to?",
+    "is_antecedent": false
+  },
+  "E_214": {
+    "key": "a_wheezing_sound_when_you_exhale",
+    "question": "Have you noticed a wheezing sound when you exhale?",
+    "is_antecedent": false
+  },
+  "E_150": {
+    "key": "been_able_to_pass_stools_or_gas_since_your",
+    "question": "Have you been able to pass stools or gas since your symptoms increased?",
+    "is_antecedent": false
+  },
+  "E_32": {
+    "key": "a_decrease_in_appetite",
+    "question": "Do you have a decrease in appetite?",
+    "is_antecedent": false
+  },
+  "E_221": {
+    "key": "are_the_symptoms_or_pain_increased_with",
+    "question": "Are the symptoms or pain increased with coughing, with an effort like lifting a weight or from forcing a bowel movement?",
+    "is_antecedent": false
+  },
+  "E_202": {
+    "key": "does_the_person_have_a_whooping_cough",
+    "question": "Does the person have a whooping cough?",
+    "is_antecedent": false
+  },
+  "E_219": {
+    "key": "r_symptoms_more_prominent_at_night",
+    "question": "Are your symptoms more prominent at night?",
+    "is_antecedent": false
+  },
+  "E_196": {
+    "key": "had_surgery_within_the_last_month",
+    "question": "Have you had surgery within the last month?",
+    "is_antecedent": true
+  },
+  "E_170": {
+    "key": "severe_itching_in_one_or_both_eyes",
+    "question": "Do you have severe itching in one or both eyes?",
+    "is_antecedent": false
+  },
+  "E_77": {
+    "key": "a_cough_that_produces_colored_or_more",
+    "question": "Do you have a cough that produces colored or more abundant sputum than usual?",
+    "is_antecedent": false
+  },
+  "E_13": {
+    "key": "find_that_your_symptoms_have_worsened_over",
+    "question": "Do you find that your symptoms have worsened over the last 2 weeks and that progressively less effort is required to cause the symptoms?",
+    "is_antecedent": false
+  },
+  "E_14": {
+    "key": "chest_pain_even_at_rest",
+    "question": "Do you have chest pain even at rest?",
+    "is_antecedent": false
+  },
+  "E_169": {
+    "key": "nose_or_the_back_of_your_throat_itchy",
+    "question": "Is your nose or the back of your throat itchy?",
+    "is_antecedent": false
+  },
+  "E_177": {
+    "key": "currently_or_did_you_ever_have_numbness_loss",
+    "question": "Do you currently, or did you ever, have numbness, loss of sensitivity or tingling anywhere on your body?",
+    "is_antecedent": false
+  },
+  "E_175": {
+    "key": "any_new_fatigue_generalized_and_vague",
+    "question": "Have you noticed any new fatigue, generalized and vague discomfort, diffuse (widespread) muscle aches or a change in your general well-being related to your consultation today?",
+    "is_antecedent": false
+  },
+  "E_174": {
+    "key": "been_unintentionally_losing_weight_or_have",
+    "question": "Have you been unintentionally losing weight or have you lost your appetite?",
+    "is_antecedent": false
+  },
+  "E_145": {
+    "key": "very_abundant_or_very_long_menstruation",
+    "question": "Do you have very abundant or very long menstruation periods?",
+    "is_antecedent": false
+  },
+  "E_92": {
+    "key": "r_cheeks_suddenly_turn_red",
+    "question": "Did your cheeks suddenly turn red?",
+    "is_antecedent": false
+  },
+  "E_192": {
+    "key": "feel_that_muscle_spasms_or_soreness_in_your",
+    "question": "Do you feel that muscle spasms or soreness in your neck are keeping you from turning your head to one side?",
+    "is_antecedent": false
+  },
+  "E_188": {
+    "key": "pale_stools_and_dark_urine",
+    "question": "Do you have pale stools and dark urine?",
+    "is_antecedent": false
+  },
+  "E_164": {
+    "key": "feel_your_heart_is_beating_very_irregularly",
+    "question": "Do you feel your heart is beating very irregularly or in a disorganized pattern?",
+    "is_antecedent": false
+  },
+  "E_193": {
+    "key": "annoying_muscle_spasms_in_your_face_neck_or",
+    "question": "Do you have annoying muscle spasms in your face, neck or any other part of your body?",
+    "is_antecedent": false
+  },
+  "E_168": {
+    "key": "trouble_keeping_your_tongue_in_your_mouth",
+    "question": "Do you have trouble keeping your tongue in your mouth?",
+    "is_antecedent": false
+  },
+  "E_180": {
+    "key": "unable_to_control_the_direction_of_your_eyes",
+    "question": "Are you unable to control the direction of your eyes?",
+    "is_antecedent": false
+  },
+  "E_67": {
+    "key": "bouts_of_choking_or_shortness_of_breath_that",
+    "question": "Do you have bouts of choking or shortness of breath that wake you up at night?",
+    "is_antecedent": false
+  },
+  "E_78": {
+    "key": "drink_alcohol_excessively_or_do_you_have_an",
+    "question": "Do you drink alcohol excessively or do you have an addiction to alcohol?",
+    "is_antecedent": true
+  },
+  "E_146": {
+    "key": "taking_any_new_oral_anticoagulants",
+    "question": "Are you taking any new oral anticoagulants ((NOACs)?",
+    "is_antecedent": true
+  },
+  "E_171": {
+    "key": "feel_like_you_are_detached_from_your_own",
+    "question": "Do you feel like you are detached from your own body or your surroundings?",
+    "is_antecedent": false
+  },
+  "E_111": {
+    "key": "feel_like_you_are_dying_or_were_you_afraid",
+    "question": "Do you feel like you are dying or were you afraid that you were about do die?",
+    "is_antecedent": false
+  },
+  "E_182": {
+    "key": "greenish_or_yellowish_nasal_discharge",
+    "question": "Do you have greenish or yellowish nasal discharge?",
+    "is_antecedent": false
+  },
+  "E_103": {
+    "key": "lost_your_sense_of_smell",
+    "question": "Have you lost your sense of smell?",
+    "is_antecedent": false
+  },
+  "E_23": {
+    "key": "ever_temporarily_stop_breathing_while_youre",
+    "question": "Do you ever temporarily stop breathing while you\u2019re asleep?",
+    "is_antecedent": false
+  },
+  "E_105": {
+    "key": "ever_had_a_heart_attack_or_do_you_have",
+    "question": "Have you ever had a heart attack or do you have angina (chest pain)?",
+    "is_antecedent": true
+  },
+  "E_108": {
+    "key": "a_problem_with_poor_circulation",
+    "question": "Do you have a problem with poor circulation?",
+    "is_antecedent": true
+  },
+  "E_104": {
+    "key": "high_blood_pressure_or_do_you_take",
+    "question": "Do you have high blood pressure or do you take medications to treat high blood pressure?",
+    "is_antecedent": true
+  },
+  "E_79": {
+    "key": "smoke_cigarettes",
+    "question": "Do you smoke cigarettes?",
+    "is_antecedent": true
+  },
+  "E_71": {
+    "key": "high_cholesterol_or_do_you_take_medications",
+    "question": "Do you have high cholesterol or do you take medications to treat high cholesterol?",
+    "is_antecedent": true
+  },
+  "E_41": {
+    "key": "been_in_contact_with_a_person_with_similar",
+    "question": "Have you been in contact with a person with similar symptoms in the past 2 weeks?",
+    "is_antecedent": true
+  },
+  "E_100": {
+    "key": "currently_take_hormones",
+    "question": "Do you currently take hormones?",
+    "is_antecedent": true
+  },
+  "E_69": {
+    "key": "diabetes",
+    "question": "Do you have diabetes?",
+    "is_antecedent": true
+  },
+  "E_167": {
+    "key": "think_you_are_pregnant_or_are_you_currently",
+    "question": "Do you think you are pregnant or are you currently pregnant?",
+    "is_antecedent": true
+  },
+  "E_115": {
+    "key": "had_unprotected_sex_with_more_than_one",
+    "question": "Have you had unprotected sex with more than one partner in the last 6 months?",
+    "is_antecedent": true
+  },
+  "E_70": {
+    "key": "significantly_overweight_compared_to_people",
+    "question": "Are you significantly overweight compared to people of the same height as you?",
+    "is_antecedent": true
+  },
+  "E_10": {
+    "key": "taking_or_have_you_recently_taken",
+    "question": "Are you currently taking or have you recently taken anti-inflammatory drugs (NSAIDs)?",
+    "is_antecedent": true
+  },
+  "E_165": {
+    "key": "have_any_of_your_family_members_ever_had_a",
+    "question": "Have any of your family members ever had a pneumothorax?",
+    "is_antecedent": true
+  },
+  "E_8": {
+    "key": "currently_undergo_dialysis",
+    "question": "Do you currently undergo dialysis?",
+    "is_antecedent": true
+  },
+  "E_25": {
+    "key": "have_any_of_your_family_members_been",
+    "question": "Have any of your family members been diagnosed with cluster headaches?",
+    "is_antecedent": true
+  },
+  "E_184": {
+    "key": "take_medication_that_dilates_your_blood",
+    "question": "Do you take medication that dilates your blood vessels?",
+    "is_antecedent": true
+  },
+  "E_185": {
+    "key": "ever_had_a_head_trauma",
+    "question": "Have you ever had a head trauma?",
+    "is_antecedent": true
+  },
+  "E_99": {
+    "key": "ever_had_a_migraine_or_is_a_member_of_your",
+    "question": "Have you ever had a migraine or is a member of your family known to have migraines?",
+    "is_antecedent": true
+  },
+  "E_107": {
+    "key": "ever_had_a_stroke",
+    "question": "Have you ever had a stroke?",
+    "is_antecedent": true
+  },
+  "E_226": {
+    "key": "more_likely_to_develop_common_allergies_than",
+    "question": "Are you more likely to develop common allergies than the general population?",
+    "is_antecedent": true
+  },
+  "E_62": {
+    "key": "regularly_take_stimulant_drugs",
+    "question": "Do you regularly take stimulant drugs?",
+    "is_antecedent": true
+  },
+  "E_49": {
+    "key": "attend_or_work_in_a_daycare",
+    "question": "Do you attend or work in a daycare?",
+    "is_antecedent": true
+  },
+  "E_95": {
+    "key": "parkinsons_disease",
+    "question": "Do you have Parkinson\u2019s disease?",
+    "is_antecedent": true
+  },
+  "E_204": {
+    "key": "traveled_out_of_the_country_in_the_last_4",
+    "question": "Have you traveled out of the country in the last 4 weeks?",
+    "is_antecedent": true
+  },
+  "E_37": {
+    "key": "metastatic_cancer",
+    "question": "Do you have metastatic cancer?",
+    "is_antecedent": true
+  },
+  "E_153": {
+    "key": "being_treated_for_osteoporosis",
+    "question": "Are you being treated for osteoporosis?",
+    "is_antecedent": true
+  },
+  "E_124": {
+    "key": "asthma_or_have_you_ever_had_to_use_a",
+    "question": "Do you have asthma or have you ever had to use a bronchodilator in the past?",
+    "is_antecedent": true
+  },
+  "E_98": {
+    "key": "a_hiatal_hernia",
+    "question": "Do you have a hiatal hernia?",
+    "is_antecedent": true
+  },
+  "E_116": {
+    "key": "had_a_cold_in_the_last_2_weeks",
+    "question": "Have you had a cold in the last 2 weeks?",
+    "is_antecedent": true
+  },
+  "E_48": {
+    "key": "live_with_4_or_more_people",
+    "question": "Do you live with 4 or more people?",
+    "is_antecedent": true
+  },
+  "E_2": {
+    "key": "infected_with_the_human_immunodeficiency",
+    "question": "Are you infected with the human immunodeficiency virus (HIV)?",
+    "is_antecedent": true
+  },
+  "E_227": {
+    "key": "immunosuppressed",
+    "question": "Are you immunosuppressed?",
+    "is_antecedent": true
+  },
+  "E_61": {
+    "key": "using_intravenous_drugs",
+    "question": "Are you currently using intravenous drugs?",
+    "is_antecedent": true
+  },
+  "E_47": {
+    "key": "suffer_from_crohns_disease_or_ulcerative",
+    "question": "Do you suffer from Crohn\u2019s disease or ulcerative colitis (UC)?",
+    "is_antecedent": true
+  },
+  "E_27": {
+    "key": "ever_had_a_sexually_transmitted_infection",
+    "question": "Have you ever had a sexually transmitted infection?",
+    "is_antecedent": true
+  },
+  "E_143": {
+    "key": "exercise_regularly_4_times_per_week_or_more",
+    "question": "Do you exercise regularly, 4 times per week or more?",
+    "is_antecedent": true
+  },
+  "E_191": {
+    "key": "a_former_smoker",
+    "question": "Are you a former smoker?",
+    "is_antecedent": true
+  },
+  "E_208": {
+    "key": "bmi_less_than_185_or_are_you_underweight",
+    "question": "Is your BMI less than 18.5, or are you underweight?",
+    "is_antecedent": true
+  },
+  "E_126": {
+    "key": "liver_cirrhosis",
+    "question": "Do you have liver cirrhosis?",
+    "is_antecedent": true
+  },
+  "E_189": {
+    "key": "had_sexual_intercourse_with_an_hivpositive",
+    "question": "Have you had sexual intercourse with an HIV-positive partner in the past 12 months?",
+    "is_antecedent": true
+  },
+  "E_7": {
+    "key": "a_poor_diet",
+    "question": "Do you have a poor diet?",
+    "is_antecedent": true
+  },
+  "E_24": {
+    "key": "ever_had_a_diagnosis_of_anemia",
+    "question": "Have you ever had a diagnosis of anemia?",
+    "is_antecedent": true
+  },
+  "E_26": {
+    "key": "any_family_members_who_have_been_diagnosed",
+    "question": "Do you have any family members who have been diagnosed with anemia?",
+    "is_antecedent": true
+  },
+  "E_113": {
+    "key": "chronic_kidney_failure",
+    "question": "Do you have chronic kidney failure?",
+    "is_antecedent": true
+  },
+  "E_160": {
+    "key": "were_you_born_prematurely_or_did_you_suffer",
+    "question": "Were you born prematurely or did you suffer any complication at birth?",
+    "is_antecedent": true
+  },
+  "E_28": {
+    "key": "are_there_any_members_of_your_family_who",
+    "question": "Are there any members of your family who have been diagnosed myasthenia gravis?",
+    "is_antecedent": true
+  },
+  "E_20": {
+    "key": "rheumatoid_arthritis",
+    "question": "Do you have Rheumatoid Arthritis?",
+    "is_antecedent": true
+  },
+  "E_80": {
+    "key": "ever_been_diagnosed_with_depression",
+    "question": "Have you ever been diagnosed with depression?",
+    "is_antecedent": true
+  },
+  "E_40": {
+    "key": "been_in_contact_with_someone_who_has_had",
+    "question": "Have you been in contact with someone who has had pertussis (whoooping cough)?",
+    "is_antecedent": true
+  },
+  "E_0": {
+    "key": "recently_had_a_viral_infection",
+    "question": "Have you recently had a viral infection?",
+    "is_antecedent": true
+  },
+  "E_1": {
+    "key": "being_treated_or_have_you_recently_been",
+    "question": "Are you currently being treated or have you recently been treated with an oral antibiotic for an ear infection?",
+    "is_antecedent": true
+  },
+  "E_34": {
+    "key": "an_active_cancer",
+    "question": "Do you have an active cancer?",
+    "is_antecedent": true
+  },
+  "E_209": {
+    "key": "r_vaccinations_up_to_date",
+    "question": "Are your vaccinations up to date?",
+    "is_antecedent": true
+  },
+  "E_139": {
+    "key": "a_known_heart_defect",
+    "question": "Do you have a known heart defect?",
+    "is_antecedent": true
+  },
+  "E_19": {
+    "key": "been_diagnosed_with_hyperthyroidism",
+    "question": "Have you been diagnosed with hyperthyroidism?",
+    "is_antecedent": true
+  },
+  "E_31": {
+    "key": "severe_chronic_obstructive_pulmonary_disease",
+    "question": "Do you have severe Chronic Obstructive Pulmonary Disease (COPD)?",
+    "is_antecedent": true
+  },
+  "E_22": {
+    "key": "a_known_issue_with_one_of_your_heart_valves",
+    "question": "Do you have a known issue with one of your heart valves?",
+    "is_antecedent": true
+  },
+  "E_60": {
+    "key": "consume_energy_drinks_regularly",
+    "question": "Do you consume energy drinks regularly?",
+    "is_antecedent": true
+  },
+  "E_35": {
+    "key": "regularly_drink_coffee_or_tea",
+    "question": "Do you regularly drink coffee or tea?",
+    "is_antecedent": true
+  },
+  "E_213": {
+    "key": "recently_taken_decongestants_or_other",
+    "question": "Have you recently taken decongestants or other substances that may have stimulant effects?",
+    "is_antecedent": true
+  },
+  "E_12": {
+    "key": "a_known_severe_food_allergy",
+    "question": "Do you have a known severe food allergy?",
+    "is_antecedent": true
+  },
+  "E_44": {
+    "key": "take_corticosteroids",
+    "question": "Do you take corticosteroids?",
+    "is_antecedent": true
+  },
+  "E_4": {
+    "key": "or_any_member_of_your_family_ever_had_croup",
+    "question": "Have you or any member of your family ever had croup?",
+    "is_antecedent": true
+  },
+  "E_81": {
+    "key": "suffer_from_chronic_anxiety",
+    "question": "Do you suffer from chronic anxiety?",
+    "is_antecedent": true
+  },
+  "E_109": {
+    "key": "ever_had_deep_vein_thrombosis",
+    "question": "Have you ever had deep vein thrombosis (DVT)?",
+    "is_antecedent": true
+  },
+  "E_110": {
+    "key": "been_unable_to_move_or_get_up_for_more_than",
+    "question": "Have you been unable to move or get up for more than 3 consecutive days within the last 4 weeks?",
+    "is_antecedent": true
+  },
+  "E_17": {
+    "key": "of_asian_descent",
+    "question": "Are you of Asian descent?",
+    "is_antecedent": true
+  },
+  "E_18": {
+    "key": "cystic_fibrosis",
+    "question": "Do you have cystic fibrosis?",
+    "is_antecedent": true
+  },
+  "E_118": {
+    "key": "ever_had_pneumonia",
+    "question": "Have you ever had pneumonia?",
+    "is_antecedent": true
+  },
+  "E_123": {
+    "key": "a_chronic_obstructive_pulmonary_disease",
+    "question": "Do you have a chronic obstructive pulmonary disease (COPD)?",
+    "is_antecedent": true
+  },
+  "E_207": {
+    "key": "live_in_in_a_big_city",
+    "question": "Do you live in in a big city?",
+    "is_antecedent": true
+  },
+  "E_86": {
+    "key": "any_close_family_members_who_suffer_from",
+    "question": "Do you have any close family members who suffer from allergies (any type), hay fever or eczema?",
+    "is_antecedent": true
+  },
+  "E_87": {
+    "key": "any_family_members_who_have_asthma",
+    "question": "Do you have any family members who have asthma?",
+    "is_antecedent": true
+  },
+  "E_141": {
+    "key": "have_your_first_menstrual_period_before_the",
+    "question": "Did you have your first menstrual period before the age of 12?",
+    "is_antecedent": true
+  },
+  "E_11": {
+    "key": "breastfed_one_of_your_children_for_more_than",
+    "question": "Have you breastfed one of your children for more than 9 months?",
+    "is_antecedent": true
+  },
+  "E_186": {
+    "key": "ever_been_diagnosed_with_obstructive_sleep",
+    "question": "Have you ever been diagnosed with obstructive sleep apnea (OSA)?",
+    "is_antecedent": true
+  },
+  "E_106": {
+    "key": "heart_failure",
+    "question": "Do you have heart failure?",
+    "is_antecedent": true
+  },
+  "E_158": {
+    "key": "were_you_diagnosed_with_endocrine_disease_or",
+    "question": "Were you diagnosed with endocrine disease or a hormone dysfunction?",
+    "is_antecedent": true
+  },
+  "E_187": {
+    "key": "eat_darkfleshed_fish_or_swiss_cheese_before",
+    "question": "Did you eat dark-fleshed fish (such as tuna) or Swiss cheese before the reaction occurred?",
+    "is_antecedent": true
+  },
+  "E_6": {
+    "key": "chronic_pancreatitis",
+    "question": "Do you have chronic pancreatitis?",
+    "is_antecedent": true
+  },
+  "E_125": {
+    "key": "ever_been_diagnosed_with_gastroesophageal",
+    "question": "Have you ever been diagnosed with gastroesophageal reflux?",
+    "is_antecedent": true
+  },
+  "E_21": {
+    "key": "ever_had_a_spontaneous_pneumothorax",
+    "question": "Have you ever had a spontaneous pneumothorax?",
+    "is_antecedent": true
+  },
+  "E_222": {
+    "key": "exposed_to_secondhand_cigarette_smoke_on_a",
+    "question": "Are you exposed to secondhand cigarette smoke on a daily basis?",
+    "is_antecedent": true
+  },
+  "E_15": {
+    "key": "started_or_taken_any_antipsychotic",
+    "question": "Have you started or taken any antipsychotic medication within the last 7 days?",
+    "is_antecedent": true
+  },
+  "E_147": {
+    "key": "been_treated_in_hospital_recently_for_nausea",
+    "question": "Have you been treated in hospital recently for nausea, agitation, intoxication or aggressive behavior and received medication via an intravenous or intramuscular route?",
+    "is_antecedent": true
+  },
+  "E_137": {
+    "key": "ever_had_surgery_to_remove_lymph_nodes",
+    "question": "Have you ever had surgery to remove lymph nodes?",
+    "is_antecedent": true
+  },
+  "E_149": {
+    "key": "take_a_calcium_channel_blockers",
+    "question": "Do you take a calcium channel blockers (medication)?",
+    "is_antecedent": true
+  },
+  "E_197": {
+    "key": "a_known_kidney_problem_resulting_in_an",
+    "question": "Do you have a known kidney problem resulting in an inability to retain proteins?",
+    "is_antecedent": true
+  },
+  "E_3": {
+    "key": "ever_had_a_pericarditis",
+    "question": "Have you ever had a pericarditis?",
+    "is_antecedent": true
+  },
+  "E_29": {
+    "key": "do_any_members_of_your_immediate_family_have",
+    "question": "Do any members of your immediate family have a psychiatric illness?",
+    "is_antecedent": true
+  },
+  "E_225": {
+    "key": "close_family_members_who_had_a",
+    "question": "Do you have close family members who had a cardiovascular disease problem before the age of 50?",
+    "is_antecedent": true
+  },
+  "E_73": {
+    "key": "in_the_last_month_have_you_been_in_contact",
+    "question": "In the last month, have you been in contact with anyone infected with the Ebola virus?",
+    "is_antecedent": true
+  },
+  "E_138": {
+    "key": "suffer_from_fibromyalgia",
+    "question": "Do you suffer from fibromyalgia?",
+    "is_antecedent": true
+  },
+  "E_101": {
+    "key": "been_hospitalized_for_an_asthma_attack_in",
+    "question": "Have you been hospitalized for an asthma attack in the past year?",
+    "is_antecedent": true
+  },
+  "E_46": {
+    "key": "had_2_or_more_asthma_attacks_in_the_past",
+    "question": "Have you had 2 or more asthma attacks in the past year?",
+    "is_antecedent": true
+  },
+  "E_119": {
+    "key": "been_diagnosed_with_chronic_sinusitis",
+    "question": "Have you been diagnosed with chronic sinusitis?",
+    "is_antecedent": true
+  },
+  "E_72": {
+    "key": "had_one_or_several_flare_ups_of_chronic",
+    "question": "Have you had one or several flare ups of chronic obstructive pulmonary disease (COPD) in the past year?",
+    "is_antecedent": true
+  },
+  "E_198": {
+    "key": "work_in_agriculture",
+    "question": "Do you work in agriculture?",
+    "is_antecedent": true
+  },
+  "E_200": {
+    "key": "work_in_the_mining_sector",
+    "question": "Do you work in the mining sector?",
+    "is_antecedent": true
+  },
+  "E_199": {
+    "key": "work_in_construction",
+    "question": "Do you work in construction?",
+    "is_antecedent": true
+  },
+  "E_121": {
+    "key": "a_deviated_nasal_septum",
+    "question": "Do you have a deviated nasal septum?",
+    "is_antecedent": true
+  },
+  "E_120": {
+    "key": "polyps_in_your_nose",
+    "question": "Do you have polyps in your nose?",
+    "is_antecedent": true
+  },
+  "E_142": {
+    "key": "does_your_mother_suffer_from_asthma",
+    "question": "Does your mother suffer from asthma?",
+    "is_antecedent": true
+  },
+  "E_195": {
+    "key": "live_in_the_suburbs",
+    "question": "Do you live in the suburbs?",
+    "is_antecedent": true
+  },
+  "E_183": {
+    "key": "live_in_a_rural_area",
+    "question": "Do you live in a rural area?",
+    "is_antecedent": true
+  },
+  "E_224": {
+    "key": "family_members_who_have_had_lung_cancer",
+    "question": "Do you have family members who have had lung cancer?",
+    "is_antecedent": true
+  },
+  "E_223": {
+    "key": "are_there_members_of_your_family_who_have",
+    "question": "Are there members of your family who have been diagnosed with pancreatic cancer?",
+    "is_antecedent": true
+  },
+  "E_5": {
+    "key": "ever_had_fluid_in_your_lungs",
+    "question": "Have you ever had fluid in your lungs?",
+    "is_antecedent": true
+  }
+}
