@@ -235,7 +235,7 @@ app.get('/api/status', (req, res) => {
 });
 
 // --- ML Disease Prediction Proxies and Symptom Extractor ---
-const ML_SERVICE_URL = 'http://localhost:5001';
+const ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://localhost:5001';
 
 // Load evidence vocabulary for Gemini extractor
 const vocabPath = path.join(__dirname, 'ml/models/evidence_vocab.json');
